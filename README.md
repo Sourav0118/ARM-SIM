@@ -88,3 +88,22 @@ if you add **s** in front of add or sub then the CPSR (flaging registers) will b
 
 **ITTE** refers to If-Then-Then-Else (next 3 instructions are conditional)
 **ITTEE** refers to If-Then-Then-Else-Else (next 4 instructions are conditional) means store multiple
+
+## Problem statement of Calculator.s
+
+Let us define our customized floating point number system (called as NFP => New Floating-Point number) in 32 bits as follows:
+* **Sign bit**: most significant bit (0 => the number is positive, 1=> the number is negative)
+* **2’compliment exponent**: next 12 bits
+* **Mantissa**: rest 19 bits
+  
+All these floating-point numbers are in normalized format.
+
+Write Assembly Language program to Add and Multiply two LPFP numbers. Also write additional code / data to test these functions.
+
+**Note**:
+* Implementation must be modular.
+* You need to write nfpAdd and nfpMultiply as two functions.
+* Data must be taken from memory. And After computation the result has to be put into memory.
+* Each function assumes that address is stored in register [r1] from where the two 32-bit NFP numbers must be taken.
+* And the result needs to be put into location pointed by register [r1] just after the input data.
+* All registers (except [r1]) used inside your functions must be restored to its original value after the end of function call.
